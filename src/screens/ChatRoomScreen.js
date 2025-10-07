@@ -26,7 +26,7 @@ export default function ChatRoomScreen({ route }) {
         data={messages}
         keyExtractor={item => item.id}
         renderItem={({ item }) => <ChatMessage message={item} currentUserId={userId} />}
-        inverted
+        // inverted
       />
       <View style={{ flexDirection: 'row', marginTop: 5 }}>
         <TextInput
