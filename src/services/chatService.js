@@ -1,4 +1,4 @@
-import {db} from '../firebase/firebaseConfig';
+import {auth, db} from '../firebase/firebaseConfig';
 import {
   collection,
   doc,
@@ -56,10 +56,15 @@ export const getChatRooms = callback => {
 
 // Send a message in task chat
 export const sendMessage = async (taskId, senderId, message) => {
-  console.log("sdwqd");
+  console.log("auth.currentUser",auth.currentUser);
   
   const messagesRef = collection(db, 'tasks', taskId, 'messages');
-  await addDoc(messagesRef, {senderId, message, timestamp: serverTimestamp()});
+  await addDoc(messagesRef, {
+    senderId,
+    message,
+    timestamp: serverTimestamp(),
+    name: auth.currentUser.displayName,
+  });
 };
 
 // Listen for messages in task chat
@@ -68,8 +73,7 @@ export const listenMessages = (taskId, callback) => {
   const q = query(messagesRef, orderBy('timestamp', 'asc'));
   const unsubscribe = onSnapshot(q, snapshot => {
     const messages = snapshot.docs.map(doc => ({id: doc.id, ...doc.data()}));
-    console.log("messages",messages);
-    
+    console.log('messages', messages);
     callback(messages);
   });
   return unsubscribe;

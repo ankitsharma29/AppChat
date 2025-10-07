@@ -5,7 +5,12 @@ export default function ChatMessage({message, currentUserId}) {
   const isMine = message.senderId === currentUserId;
   return (
     <View style={[styles.container, isMine ? styles.myMsg : styles.otherMsg]}>
-      <Text>{message.message}</Text>
+      <Text style={{color: 'black', textAlign: 'right'}}>
+        {message.name ?? ''}
+      </Text>
+      <Text style={{color: 'black', textAlign: 'left'}}>
+        {message.message}
+      </Text>
       {message.timestamp && (
         <Text style={styles.time}>
           {message.timestamp

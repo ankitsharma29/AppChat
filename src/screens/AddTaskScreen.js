@@ -3,6 +3,7 @@ import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import { addTask } from '../services/taskService';
 import colors from '../utils/colors';
 
+
 const AddTaskScreen = ({ navigation }) => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');

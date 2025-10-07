@@ -3,7 +3,6 @@ import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 import {auth} from '../firebase/firebaseConfig';
 
 export default function TaskItem({task, onComplete, onDelete, navigation}) {
-  console.log('auth', auth.currentUser);
 
   return (
     <TouchableOpacity
@@ -12,7 +11,6 @@ export default function TaskItem({task, onComplete, onDelete, navigation}) {
           roomId: task.id,
           roomName: task.title,
           userId: auth.currentUser?.uid ?? 'user1',
-          // userId: 'user1'
         })
       }>
       <View style={styles.card}>
