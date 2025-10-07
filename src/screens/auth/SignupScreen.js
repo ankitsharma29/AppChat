@@ -41,7 +41,7 @@ export default function SignupScreen({ navigation }) {
 
       navigation.replace('Tasks'); // Redirect to home screen
     } catch (err) {
-      Alert.alert('Signup Failed', err.message);
+      // Alert.alert('Signup Failed', err.message);
     }
   };
 

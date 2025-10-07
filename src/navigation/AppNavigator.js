@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   ActivityIndicator,
   View,
@@ -6,11 +6,11 @@ import {
   TouchableOpacity,
   Text,
 } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { auth, firebaseApp } from '../firebase/firebaseConfig';
-import { onAuthStateChanged, signOut } from 'firebase/auth';
+import {auth, firebaseApp} from '../firebase/firebaseConfig';
+import {onAuthStateChanged, signOut} from 'firebase/auth';
 
 import AddTaskScreen from '../screens/tasks/AddTaskScreen';
 import ChatListScreen from '../screens/chats/ChatListScreen';
@@ -26,26 +26,17 @@ export default function AppNavigator() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const checkToken = async () => {
-      const token = await AsyncStorage.getItem('token');
-      if (token) {
-        // Token exists, let Firebase auth state handle it
-        const unsubscribe = onAuthStateChanged(auth, currentUser => {
-          setUser(currentUser);
-          if (initializing) setInitializing(false);
-        });
-        return unsubscribe;
-      } else {
-        setInitializing(false);
-      }
-    };
-
-    checkToken();
+    // let Firebase auth state handle it
+    const unsubscribe = onAuthStateChanged(auth, currentUser => {
+      setUser(currentUser);
+      if (initializing) setInitializing(false);
+    });
+    return unsubscribe;
   }, []);
 
   const handleLogout = navigation => {
     Alert.alert('Logout', 'Are you sure you want to logout?', [
-      { text: 'Cancel', style: 'cancel' },
+      {text: 'Cancel', style: 'cancel'},
       {
         text: 'Logout',
         style: 'destructive',
@@ -60,7 +51,7 @@ export default function AppNavigator() {
 
   if (initializing) {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
         <ActivityIndicator size="large" color="#007AFF" />
       </View>
     );
@@ -74,14 +65,13 @@ export default function AppNavigator() {
             <Stack.Screen
               name="Tasks"
               component={TaskListScreen}
-              options={({ navigation }) => ({
+              options={({navigation}) => ({
                 title: 'Tasks',
                 headerRight: () => (
                   <TouchableOpacity
-                    style={{ marginRight: 10 }}
-                    onPress={() => handleLogout(navigation)}
-                  >
-                    <Text style={{ color: '#ff3b30', fontWeight: 'bold' }}>
+                    style={{marginRight: 10}}
+                    onPress={() => handleLogout(navigation)}>
+                    <Text style={{color: '#ff3b30', fontWeight: 'bold'}}>
                       Logout
                     </Text>
                   </TouchableOpacity>

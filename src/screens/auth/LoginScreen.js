@@ -32,7 +32,7 @@ export default function LoginScreen({navigation}) {
       await AsyncStorage.setItem('token', token);
       navigation.replace('Tasks');
     } catch (err) {
-      Alert.alert('Login Failed', err.message);
+      // Alert.alert('Login Failed', err.message);
     }
   };
 
