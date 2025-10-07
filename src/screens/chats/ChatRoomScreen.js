@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {View, TextInput, Button, FlatList, Text} from 'react-native';
-import {sendMessage, listenMessages} from '../services/chatService';
-import ChatMessage from '../components/ChatMessage';
+import {sendMessage, listenMessages} from '../../services/chatService';
+import ChatMessage from '../../components/ChatMessage';
 
 export default function ChatRoomScreen({route}) {
   const {roomId, roomName, userId} = route.params;

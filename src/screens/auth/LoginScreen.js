@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {View, TextInput, Button, Alert} from 'react-native';
+import {View, TextInput, Button, Alert, Text} from 'react-native';
 import {signInWithEmailAndPassword} from 'firebase/auth';
-import {auth} from '../firebase/firebaseConfig';
+import {auth} from '../../firebase/firebaseConfig';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function LoginScreen({navigation}) {
@@ -39,6 +39,16 @@ export default function LoginScreen({navigation}) {
         style={{borderWidth: 1, marginBottom: 10, padding: 8}}
       />
       <Button title="Login" onPress={handleLogin} />
+      <Text
+        style={{
+          color: 'black',
+          marginVertical: 10,
+          textAlign: 'center',
+          fontWeight: '700',
+          fontSize:20
+        }}>
+        or{' '}
+      </Text>
       <Button title="Signup" onPress={() => navigation.navigate('Signup')} />
     </View>
   );

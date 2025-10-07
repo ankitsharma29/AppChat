@@ -4,13 +4,14 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {auth} from '../firebase/firebaseConfig';
 import {onAuthStateChanged, signOut} from 'firebase/auth';
+import AddTaskScreen from '../screens/tasks/AddTaskScreen';
+import ChatListScreen from '../screens/chats/ChatListScreen';
+import ChatRoomScreen from '../screens/chats/ChatRoomScreen';
+import LoginScreen from '../screens/auth/LoginScreen';
+import SignupScreen from '../screens/auth/SignupScreen';
+import TaskListScreen from '../screens/tasks/TaskListScreen';
 
-import LoginScreen from '../screens/LoginScreen';
-import SignupScreen from '../screens/SignupScreen';
-import TaskListScreen from '../screens/TaskListScreen';
-import AddTaskScreen from '../screens/AddTaskScreen';
-import ChatListScreen from '../screens/ChatListScreen';
-import ChatRoomScreen from '../screens/ChatRoomScreen';
+
 
 const Stack = createNativeStackNavigator();
 

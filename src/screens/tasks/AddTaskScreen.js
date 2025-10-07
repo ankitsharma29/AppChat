@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
-import { addTask } from '../services/taskService';
-import colors from '../utils/colors';
+import { addTask } from '../../services/taskService';
+import colors from '../../utils/colors';
 
 
 const AddTaskScreen = ({ navigation }) => {

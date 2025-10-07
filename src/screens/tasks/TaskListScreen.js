@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, FlatList, TouchableOpacity, StyleSheet} from 'react-native';
-import {subscribeTasks, updateTask, deleteTask} from '../services/taskService';
-import TaskItem from '../components/TaskItem';
+import {subscribeTasks, updateTask, deleteTask} from '../../services/taskService';
+import TaskItem from '../../components/TaskItem';
 
 export default function TaskListScreen({navigation}) {
   const [tasks, setTasks] = useState([]);

@@ -7,7 +7,7 @@ import {
   TextInput,
   StyleSheet,
 } from 'react-native';
-import {createChatRoom, getChatRooms} from '../services/chatService';
+import {createChatRoom, getChatRooms} from '../../services/chatService';
 
 export default function ChatListScreen({navigation}) {
   const [rooms, setRooms] = useState([]);
