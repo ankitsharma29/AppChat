@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "137816430576",
+    "firebase_url": "https://flutterfire-6e119-default-rtdb.firebaseio.com",
+    "project_id": "flutterfire-6e119",
+    "storage_bucket": "flutterfire-6e119.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137816430576:android:593dd581606672cc3caf35",
+        "android_client_info": {
+          "package_name": "com.TasksChatApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137816430576-oc0113hanucf8dr1gkcm5miqtmttgu6r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCdRkrhSNlh_O7WwR8DMB7ZzGFjDcxJLwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137816430576-oc0113hanucf8dr1gkcm5miqtmttgu6r.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+  ],
+  "configuration_version": "1"
+}
