@@ -29,7 +29,6 @@
     "react-native": "0.77.2",
     "react-native-check-version": "^1.1.1",
     "react-native-device-info": "^10.13.1",
-    "react-native-google-mobile-ads": "^15.4.0",
     "react-native-linear-gradient": "^2.8.3",
     "react-native-localize": "^3.0.6",
     "react-native-permissions": "^4.1.4",
